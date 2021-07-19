@@ -27,7 +27,7 @@ class DeviceController {
     } catch(e) {
       next(ApiError.badRequest(e.message));
     }
-  };
+  }
 
   async getAllDevices(req, res) {
     let { brandId, typeId, limit, page } = req.query;
@@ -49,7 +49,7 @@ class DeviceController {
     }
 
     return res.json(devices);
-  };
+  }
 
   async getDeviceById(req, res) {
     const { id } = req.params;
@@ -58,7 +58,7 @@ class DeviceController {
       include: [{ model: DeviceInfo, as: 'info' }]
     });
     return res.json(device);
-  };
-};
+  }
+}
 
 module.exports = new DeviceController();
