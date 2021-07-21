@@ -1,3 +1,15 @@
 {
-  "dependencies": {}
+  "name": "pern",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"yarn run server\"",
+    "server": "npm run start --prefix server"
+  },
+  "author": "PatricCormac",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^6.2.0"
+  }
 }
