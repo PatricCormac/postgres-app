@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "concurrently \"yarn run server\"",
-    "server": "npm run start --prefix server"
+    "dev": "concurrently \"yarn run server\" \"yarn run client\"",
+    "server": "npm run start --prefix server",
+    "client": "npm run start --prefix client"
   },
   "author": "PatricCormac",
   "license": "ISC",
