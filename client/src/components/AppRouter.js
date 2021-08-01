@@ -1,10 +1,11 @@
-import React from 'react'
-import { Switch, Route, Redirect } from 'react-router-dom'
+import React from 'react';
+import { connect } from 'react-redux';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import { authRoutes, publicRoutes } from '../routes';
 import { SHOP_ROUTE } from '../utils/consts';
 
-export const AppRouter = () => {
-  const isAuth = false;
+const AppRouter = ({ isAuth }) => {
+
   return (
     <Switch>
       {isAuth && authRoutes.map(({ path, Component }) =>
@@ -17,3 +18,11 @@ export const AppRouter = () => {
     </Switch>
   )
 };
+
+const mapStateToProps = (state) => {
+  return {
+    isAuth: state.user.isAuth
+  }
+};
+
+export default connect(mapStateToProps, null)(AppRouter);

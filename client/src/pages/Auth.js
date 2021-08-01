@@ -1,11 +1,20 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { Link } from 'react-router-dom';
+import { setIsAuth } from '../store/user/actions'
 
-const Auth = () => {
+const Auth = ({ setIsAuth }) => {
+  const authHandler = () => setIsAuth();
   return (
     <div>
-      Auth
+      <button onClick={authHandler}>Auth</button>
+      <Link to={{ pathname: "/admin" }}>Admin</Link>
     </div>
   )
 }
 
-export default Auth
+const mapDispatchToProps = {
+  setIsAuth
+}
+
+export default connect(null, mapDispatchToProps)(Auth)
