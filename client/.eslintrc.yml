@@ -9,18 +9,18 @@ parserOptions:
   ecmaFeatures:
     jsx: true
   ecmaVersion: 12
-  sourceType: module
+  sourceType: 'module'
 plugins:
-  - react
+  - 'react'
 rules: {
-  linebreak-style: [error, windows],
-  react/jsx-filename-extension: [1, { extensions: [.js, .jsx] }],
-  semi: [2, always],
-  comma-dangle: [error, never],
-  no-underscore-dangle: [error, { allow: [__REDUX_DEVTOOLS_EXTENSION__] }]
+  linebreak-style: ['error', 'windows'],
+  react/jsx-filename-extension: [1, { extensions: ['.js', '.jsx'] }],
+  semi: [2, 'always'],
+  comma-dangle: ['error', 'never'],
+  no-underscore-dangle: ['error', { allow: ['__REDUX_DEVTOOLS_EXTENSION__'] }]
 }
 settings: {
   react: {
-    version: detect
+    version: 'detect'
   }
 }

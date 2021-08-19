@@ -1,4 +1,5 @@
 const Router = require('express');
+
 const router = new Router();
 const deviceRouter = require('./deviceRouter');
 const brandRouter = require('./brandRouter');
