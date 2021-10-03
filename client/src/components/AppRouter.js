@@ -1,30 +1,24 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import _ from 'lodash';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { authRoutes, publicRoutes } from '../routes';
 import { SHOP_ROUTE } from '../utils/consts';
+import { UseUserContext } from '../context/user';
 
-const AppRouter = ({ isAuth }) => (
-  <Switch>
-    {isAuth && authRoutes.map(({ path, Component }) => (
-      <Route key={path} path={path} component={Component} exact />
-    ))}
-    {publicRoutes.map(({ path, Component }) => (
-      <Route key={path} path={path} component={Component} exact />
-    ))}
-    <Redirect to={SHOP_ROUTE} />
-  </Switch>
-);
+const AppRouter = () => {
+  const { user } = UseUserContext();
 
-const mapStateToProps = (state) => ({ isAuth: state.user.isAuth });
-
-AppRouter.propTypes = {
-  isAuth: PropTypes.bool
+  return (
+    <Switch>
+      {_.get(user, 'isAuth') && authRoutes.map(({ path, Component }) => (
+        <Route key={path} path={path} component={Component} exact />
+      ))}
+      {publicRoutes.map(({ path, Component }) => (
+        <Route key={path} path={path} component={Component} exact />
+      ))}
+      <Redirect to={SHOP_ROUTE} />
+    </Switch>
+  );
 };
 
-AppRouter.defaultProps = {
-  isAuth: false
-};
-
-export default connect(mapStateToProps, null)(AppRouter);
+export default AppRouter;

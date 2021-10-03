@@ -1,29 +1,22 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { setIsAuth } from '../store/user/actions';
+import { UseUserContext } from '../context/user';
 
-const Auth = ({ setUserAuth }) => {
-  const authHandler = () => setUserAuth();
+const Auth = () => {
+  const { user, setAuth } = UseUserContext();
+
+  const clickHandler = () => {
+    setAuth();
+  };
+
+  console.log({ user });
+
   return (
     <div>
-      <button type="button" onClick={authHandler}>Auth</button>
+      <button type="button" onClick={clickHandler}>Auth</button>
       <Link to={{ pathname: '/admin' }}>Admin</Link>
     </div>
   );
 };
 
-const mapDispatchToProps = {
-  setUserAuth: setIsAuth
-};
-
-Auth.propTypes = {
-  setUserAuth: PropTypes.func
-};
-
-Auth.defaultProps = {
-  setUserAuth: null
-};
-
-export default connect(null, mapDispatchToProps)(Auth);
+export default Auth;

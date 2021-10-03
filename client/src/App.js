@@ -1,16 +1,15 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import { Provider } from 'react-redux';
 import AppRouter from './components/AppRouter';
-import store from './store/store';
+import { UserProvider } from './context/user';
 
 function App() {
   return (
-    <Provider store={store}>
+    <UserProvider>
       <BrowserRouter>
         <AppRouter />
       </BrowserRouter>
-    </Provider>
+    </UserProvider>
   );
 }
 
