@@ -1,0 +1,33 @@
+.forms {
+  padding: 15px 0;
+}
+
+.addType {
+  display: flex;
+  width: 350px;
+  flex-wrap: wrap;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgb(155, 155, 155);
+}
+
+.inputWrap {
+  width: 100%;
+  padding: 5px 10px;
+  border: 1px solid #867f7f;
+  border-radius: 5px;
+}
+
+.inputWrap:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.label {
+  display: block;
+  font-size: 14px;
+}
+
+.input {
+  font-size: 24px;
+  font-weight: 400;
+}

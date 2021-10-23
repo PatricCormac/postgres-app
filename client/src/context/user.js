@@ -12,7 +12,7 @@ export const UserProvider = ({ children }) => {
 
   useEffect(() => {
     setUser({
-      isAuth: false
+      isAuth: true
     });
   }, []);
 
@@ -32,7 +32,7 @@ export const UserProvider = ({ children }) => {
   );
 };
 
-export const UseUserContext = () => {
+export const useUserContext = () => {
   const value = useContext(UserContext);
 
   return value;

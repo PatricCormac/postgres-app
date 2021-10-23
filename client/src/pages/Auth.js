@@ -1,20 +1,18 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { UseUserContext } from '../context/user';
+import Header from '../components/Header/Header';
+import { useUserContext } from '../context/user';
 
 const Auth = () => {
-  const { user, setAuth } = UseUserContext();
+  const { setAuth } = useUserContext();
 
   const clickHandler = () => {
     setAuth();
   };
 
-  console.log({ user });
-
   return (
     <div>
+      <Header />
       <button type="button" onClick={clickHandler}>Auth</button>
-      <Link to={{ pathname: '/admin' }}>Admin</Link>
     </div>
   );
 };

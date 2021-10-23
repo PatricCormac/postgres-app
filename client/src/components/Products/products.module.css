@@ -1,0 +1,12 @@
+.list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.listItem {
+  width: 230px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgb(252, 203, 203);
+  cursor: pointer;
+}

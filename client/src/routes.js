@@ -1,6 +1,6 @@
-import Admin from './pages/Admin';
+import Admin from './pages/Admin/Admin';
 import Basket from './pages/Basket';
-import Shop from './pages/Shop';
+import Shop from './pages/Shop/Shop';
 import Auth from './pages/Auth';
 import DevicePage from './pages/DevicePage';
 import {

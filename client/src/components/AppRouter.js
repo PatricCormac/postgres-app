@@ -3,10 +3,10 @@ import _ from 'lodash';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { authRoutes, publicRoutes } from '../routes';
 import { SHOP_ROUTE } from '../utils/consts';
-import { UseUserContext } from '../context/user';
+import { useUserContext } from '../context/user';
 
 const AppRouter = () => {
-  const { user } = UseUserContext();
+  const { user } = useUserContext();
 
   return (
     <Switch>

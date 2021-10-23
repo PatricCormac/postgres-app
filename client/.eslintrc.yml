@@ -13,15 +13,16 @@ parserOptions:
 plugins:
   - 'react'
 rules: {
-  linebreak-style: ['warn', 'windows'],
-  react/jsx-filename-extension: [1, { extensions: ['.js', '.jsx'] }],
-  semi: [2, 'always'],
-  comma-dangle: ['warn', 'never'],
-  no-underscore-dangle: ['warn', { allow: ['__REDUX_DEVTOOLS_EXTENSION__'] }],
-  arrow-body-style: ['warn', 'as-needed'],
+  linebreak-style: ["error", "windows"],
+  react/jsx-filename-extension: [1, { "extensions": [".js", ".jsx"] }],
+  comma-dangle: ["error", "never"],
   react/prop-types: 0,
-  import/prefer-default-export: 0,
-  react/react-in-jsx-scope: 0
+  jsx-a11y/label-has-associated-control: ["error", {
+        "required": {
+          "some": ["nesting", "id"]
+        }
+      }],
+  no-param-reassign: ["error", { "props": false }]
 }
 settings: {
   react: {

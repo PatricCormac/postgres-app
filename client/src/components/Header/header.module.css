@@ -1,0 +1,28 @@
+.header {
+  height: 74px;
+  background: rgb(123, 167, 110);
+}
+
+.menu {
+  display: flex;
+  padding: 16px 0;
+}
+
+.menu__item {
+  cursor: pointer;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.menu__item:not(:last-child) {
+  margin-right: 15px;
+}
+
+.menu__item:hover {
+  border-bottom: 2px solid #000;
+}
+
+.menu__item a {
+  display: inline-block;
+  padding: 10px 15px;
+}
